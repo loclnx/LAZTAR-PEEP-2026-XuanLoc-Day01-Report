@@ -8,16 +8,6 @@ import { Heading } from './ui/heading'
 import { isFavorite as checkIsFavorite, toggleFavorite } from '@/services/favorite.service';
 import { useFocusEffect } from '@react-navigation/native';
 
-const [isFavorite, setIsFavorite] = useState(false);
-// Load favorite status when component mounts
-  const loadFavoriteStatus = useCallback(async () => {
-    const favoriteStatus = await checkIsFavorite(String(data.id));
-    setIsFavorite(favoriteStatus);
-  }, [data.id]);
-
-  useEffect(() => {
-    loadFavoriteStatus();
-  }, [loadFavoriteStatus]);
 
   // Reload favorite status when screen is focused (e.g., returning from detail screen)
   useFocusEffect(
