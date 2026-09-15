@@ -9,6 +9,9 @@ import { isFavorite as checkIsFavorite, toggleFavorite } from '@/services/favori
 import { useFocusEffect } from '@react-navigation/native';
 
 
+const [isFavorite, setIsFavorite] = useState(false);
+
+
   // Reload favorite status when screen is focused (e.g., returning from detail screen)
   useFocusEffect(
     useCallback(() => {
@@ -98,6 +101,23 @@ export default function PlayerCard({data}:Props) {
               </Box>
             </Pressable>
           </Box>
+<<<<<<< HEAD
+=======
+          <Box className="items-center mb-3">
+            <Pressable >
+              <Box className="relative">
+                {/* Image - No container, transparent background */}
+                <Image
+                  source={{ uri: data.image }}
+                  className="w-20 h-20"
+                  resizeMode="contain"
+                  alt="player"
+                  style={{ backgroundColor: 'transparent' }}
+                />
+              </Box>
+            </Pressable>
+          </Box>
+>>>>>>> aa117f4f54e03f8caa90be4913c04a4209e80d2d
 
           {/* Player Name */}
           <Box className="items-center mb-2">
