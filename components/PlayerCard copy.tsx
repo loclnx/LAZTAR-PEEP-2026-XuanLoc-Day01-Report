@@ -18,6 +18,11 @@ const [isFavorite, setIsFavorite] = useState(false);
   useEffect(() => {
     loadFavoriteStatus();
   }, [loadFavoriteStatus]);
+  useFocusEffect(
+    useCallback(() => {
+      loadFavoriteStatus();
+    }, [loadFavoriteStatus])
+  );
 
   // Reload favorite status when screen is focused (e.g., returning from detail screen)
   useFocusEffect(
